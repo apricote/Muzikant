@@ -4,6 +4,7 @@ Da mir die aktuelle Lage an inkompatibilität zwischen meinen Geräten nicht
 gefällt versuche ich nun meinen eigenen Wunschplayer umzusetzten und Versionen für  
 
 Feature Liste:
+
 1. Backend
     1. Musik Verwaltung
         1. Titel abspeichern + Meta (Titelname, Artist, Album, Jahr, Titelnummer, CD Nummer, Artwork)
@@ -18,6 +19,7 @@ Feature Liste:
         1. Wiedergabelisten
         2. Auf Notification von Plattenspieler reagieren -> Nächster Song
         3. Wrapper für Plattenspieler (Pausieren, Stoppen, Information)
+        4. Nächster Song/Vorheriger Song
 2. Frontend
     1. Desktop
         1. Anzeige von Titel, Alben, Artisten
