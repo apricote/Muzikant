@@ -20,6 +20,7 @@ Feature Liste:
         2. Auf Notification von Plattenspieler reagieren -> Nächster Song
         3. **Wrapper für Plattenspieler (Pausieren, Stoppen, Information)**
         4. Nächster Song/Vorheriger Song
+        5. Zufallswiedergabe
 2. **Frontend**
     1. **Desktop**
         1. **Anzeige von Titel, Alben, Artisten**
@@ -37,3 +38,4 @@ Zukünftige Ideen:
 * Playlisten
 * Albumcover in Frontend
 * Lockscreen und Widget für Android
+* Lyrics
