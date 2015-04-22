@@ -4,79 +4,79 @@ import java.io.File;
 
 public class Song {
 
-  private File file;
+    private File file;
 
-  private String title;
+    private String title;
 
-  private String artist;
+    private String artist;
 
-  private String album;
+    private String album;
 
-  private int year;
+    private int year;
 
-  private int numberInAlbum;
+    private int numberInAlbum;
 
-  private int numberOfCD;
+    private int numberOfCD;
 
-  private Artwork artwork;
+    private Artwork artwork;
 
-  public File getFile() {
-  return null;
-  }
+    public Song(File file, String title, String artist, String Album) {
+    }
 
-  public String getTitle() {
-  return null;
-  }
+    public Song(File file, String title, String artist, String Album, int Year, int numberInAlbum, int numberOfCD, Artwork artwork) {
+    }
 
-  public String getArtist() {
-  return null;
-  }
+    public File getFile() {
+        return null;
+    }
 
-  public String getAlbum() {
-  return null;
-  }
+    public String getTitle() {
+        return null;
+    }
 
-  public int getYear() {
-  return 0;
-  }
+    public void setTitle(String title) {
+    }
 
-  public int getNumberInAlbum() {
-  return 0;
-  }
+    public String getArtist() {
+        return null;
+    }
 
-  public int getNumberOfCD() {
-  return 0;
-  }
+    public void setArtist(String artist) {
+    }
 
-  public Artwork getArtwork() {
-  return null;
-  }
+    public String getAlbum() {
+        return null;
+    }
 
-  public void setTitle(String title) {
-  }
+    public void setAlbum(String album) {
+    }
 
-  public void setArtist(String artist) {
-  }
+    public int getYear() {
+        return 0;
+    }
 
-  public void setAlbum(String album) {
-  }
+    public void setYear(int year) {
+    }
 
-  public void setYear(int year) {
-  }
+    public int getNumberInAlbum() {
+        return 0;
+    }
 
-  public void setNumberInAlbum(int noInAlbum) {
-  }
+    public void setNumberInAlbum(int noInAlbum) {
+    }
 
-  public void setNumberOfCD(int noOfCD) {
-  }
+    public int getNumberOfCD() {
+        return 0;
+    }
 
-  public void setArtwork(Artwork artwork) {
-  }
+    public void setNumberOfCD(int noOfCD) {
+    }
 
-  public Song(File file, String title, String artist, String Album) {
-  }
+    public Artwork getArtwork() {
+        return null;
+    }
 
-  public Song(File file, String title, String artist, String Album, int Year, int numberInAlbum, int numberOfCD, Artwork artwork) {
-  }
+    public void setArtwork(Artwork artwork) {
+    }
 
 }

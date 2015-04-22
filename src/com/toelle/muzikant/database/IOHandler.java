@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface IOHandler {
 
-  public void put(Song song);
+    void put(Song song);
 
-  public void put(List<Song> songs);
+    void put(List<Song> songs);
 
-  public List<Song> get();
+    List<Song> get();
 
 }

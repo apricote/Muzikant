@@ -11,11 +11,11 @@ public class MusicLibrary {
 
     private IOHandler ioHandler;
 
-    public List<Song> search(Predicate<? super Song> predicate) {
-        return null;
+    public MusicLibrary(IOHandler ioHandler) {
     }
 
-    public MusicLibrary(IOHandler ioHandler) {
+    public List<Song> search(Predicate<? super Song> predicate) {
+        return null;
     }
 
 }

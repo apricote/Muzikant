@@ -7,55 +7,55 @@ import java.util.Observable;
 
 public class Deejay {
 
-  private Plattenspieler plattenspieler;
+    private Plattenspieler plattenspieler;
 
-  private List<Song> queue;
+    private List<Song> queue;
 
-  private boolean randomMode = false;
+    private boolean randomMode = false;
 
-  public Deejay(Plattenspieler plattenspieler) {
-  }
+    public Deejay(Plattenspieler plattenspieler) {
+    }
 
-  public void resume() {
-  }
+    public void resume() {
+    }
 
-  public void pause() {
-  }
+    public void pause() {
+    }
 
-  public PlaybackState getSpielerState() {
-  return null;
-  }
+    public PlaybackState getSpielerState() {
+        return null;
+    }
 
-  public void add(List<Song> songs) {
-  }
+    public void add(List<Song> songs) {
+    }
 
-  public boolean getRandomMode() {
-  return false;
-  }
+    public boolean getRandomMode() {
+        return false;
+    }
 
-  public void setRandomMode(boolean mode) {
-  }
+    public void setRandomMode(boolean mode) {
+    }
 
-  /** 
-   *  Will only return future entries and not earlier ones
-   */
-  public void emptyQueue() {
-  }
+    /**
+     * Will only return future entries and not earlier ones
+     */
+    public void emptyQueue() {
+    }
 
-  public List<Song> getQueue() {
-  return null;
-  }
+    public List<Song> getQueue() {
+        return null;
+    }
 
-  public void newOperation() {
-  }
+    public void newOperation() {
+    }
 
-  public void next() {
-  }
+    public void next() {
+    }
 
-  public void previous() {
-  }
+    public void previous() {
+    }
 
-  public void update(Observable o, Object arg) {
-  }
+    public void update(Observable o, Object arg) {
+    }
 
 }
