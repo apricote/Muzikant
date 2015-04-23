@@ -7,10 +7,11 @@ public class Artwork {
     private Image image;
 
     public Artwork(Image image) {
+        this.image = image;
     }
 
     public Image getArtwork() {
-        return null;
+        return image;
     }
 
 }

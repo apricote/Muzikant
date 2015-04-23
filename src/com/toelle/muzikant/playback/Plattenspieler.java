@@ -2,28 +2,47 @@ package com.toelle.muzikant.playback;
 
 import com.toelle.muzikant.manager.Song;
 
-public abstract class Plattenspieler {
+import java.util.Observable;
+
+public abstract class Plattenspieler extends Observable {
 
     private Song presentSong;
 
-    private double positionInSong;
+    private double positionInSong; // in Seconds
 
     private PlaybackState state;
 
-    public Plattenspieler() {
+    public abstract void resume();
+
+    public abstract void play(Song song);
+
+    public abstract void pause();
+
+    protected Song getSong() {
+        return presentSong;
     }
 
-    public void resume() {
+    protected void setSong(Song newSong) {
+        this.presentSong = newSong;
     }
 
-    public void play(Song song) {
+    public double getPositionInSong() {
+        return positionInSong;
     }
 
-    public void pause() {
+    protected void setPositionInSong(double newPosition) throws IndexOutOfBoundsException {
+        positionInSong = newPosition;
     }
 
     public PlaybackState getState() {
-        return null;
+        return state;
+    }
+
+    protected void setState(PlaybackState newState) {
+        this.state = newState;
+
+        setChanged();
+        notifyObservers(newState);
     }
 
 }

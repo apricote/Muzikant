@@ -2,14 +2,14 @@ package com.toelle.muzikant.database;
 
 import com.toelle.muzikant.manager.Song;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface IOHandler {
 
-    void put(Song song);
+    void put(Song song) throws IOException;
 
-    void put(List<Song> songs);
+    void put(List<Song> songs) throws IOException;
 
-    List<Song> get();
-
+    List<Song> get() throws IOException;
 }
