@@ -1,0 +1,17 @@
+<project>
+    <property file="build.properties"/>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="core.compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="core-src" destdir="build/classes"/>
+    </target>
+
+    <target name="core.jar" depends="core.compile">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/muzikant-core-${version}.jar" basedir="build/classes"/>
+    </target>
+</project>
