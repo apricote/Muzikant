@@ -26,7 +26,7 @@ public class MusicLibrary {
                             .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public List<TagElement> getDistinctTags(Function<? super Song, TagElement> mapper) {
+    public <T> List<T> getDistinctTags(Function<? super Song, T> mapper) {
         return musiclibrary.parallelStream()
                             .map(mapper)
                             .distinct()
