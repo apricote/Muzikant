@@ -2,16 +2,30 @@
     <property file="build.properties"/>
 
     <target name="clean">
-        <delete dir="build"/>
+        <delete dir="${out.dir}"/>
     </target>
 
     <target name="core.compile">
-        <mkdir dir="build/classes"/>
-        <javac srcdir="core-src" destdir="build/classes"/>
+        <mkdir dir="${out.core.dir}"/>
+        <javac srcdir="core-src" destdir="${out.core.dir}"/>
     </target>
 
-    <target name="core.jar" depends="core.compile">
-        <mkdir dir="build/jar"/>
-        <jar destfile="build/jar/muzikant-core-${version}.jar" basedir="build/classes"/>
+    <target name="core.bin" depends="core.compile">
+        <mkdir dir="${bin.dir}"/>
+        <jar destfile="${bin.dir}/${bin.core.name}" basedir="${out.core.dir}"/>
+    </target>
+
+    <target name="desktop.compile" depends="core.compile">
+        <mkdir dir="${out.desktop.dir}"/>
+        <javac srcdir="desktop-src" destdir="${out.desktop.dir}">
+            <classpath>
+                <pathelement path="${out.core.dir}" />
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="desktop.bin" depends="desktop.compile">
+        <mkdir dir="build/bin"/>
+        <jar destfile="${bin.dir}/${bin.desktop.name}" basedir="{out.desktop.dir}"/>
     </target>
 </project>
