@@ -26,6 +26,6 @@
 
     <target name="desktop.bin" depends="desktop.compile">
         <mkdir dir="${bin.dir}"/>
-        <jar destfile="${bin.dir}/${bin.desktop.name}" basedir="{out.desktop.dir}"/>
+        <jar destfile="${bin.dir}/${bin.desktop.name}" basedir="${out.desktop.dir}"/>
     </target>
 </project>
