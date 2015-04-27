@@ -1,6 +1,6 @@
 package com.toelle.muzikant.database;
 
-import com.toelle.muzikant.manager.Song;
+import com.toelle.muzikant.model.Song;
 
 import java.io.IOException;
 import java.util.List;
