@@ -1,6 +1,6 @@
 package com.toelle.muzikant.playback;
 
-import com.toelle.muzikant.manager.Song;
+import com.toelle.muzikant.model.Song;
 
 import java.util.Observable;
 
