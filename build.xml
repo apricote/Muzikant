@@ -28,4 +28,13 @@
         <mkdir dir="${bin.dir}"/>
         <jar destfile="${bin.dir}/${bin.desktop.name}" basedir="${out.desktop.dir}"/>
     </target>
+
+    <target name="desktop.run" depends="desktop.compile">
+        <java classname="com.toelle.muzikant.gui.Main">
+            <classpath>
+                <pathelement path="${out.desktop.dir}"/>
+                <pathelement path="${out.core.dir}"/>
+            </classpath>
+        </java>
+    </target>
 </project>
