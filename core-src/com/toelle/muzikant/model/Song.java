@@ -1,7 +1,5 @@
 package com.toelle.muzikant.model;
 
-import com.toelle.muzikant.manager.Artwork;
-
 import java.io.File;
 
 public class Song {
