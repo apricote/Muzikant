@@ -1,4 +1,4 @@
-package com.toelle.muzikant.manager;
+package com.toelle.muzikant.model;
 
 import javafx.scene.image.Image;
 
