@@ -9,6 +9,12 @@ public class Song {
     private int numberInAlbum;
     private int numberOfCD;
 
+    private String albumName;
+    private Artwork artwork;
+    private int albumYear;
+
+    private String artistName;
+
     public Song(File file, String title) {
         this.file = file;
         this.title = title;
@@ -18,6 +24,38 @@ public class Song {
         this(file, title);
         this.numberInAlbum = numberInAlbum;
         this.numberOfCD = numberOfCD;
+    }
+
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
+    }
+
+    public Artwork getArtwork() {
+        return artwork;
+    }
+
+    public void setArtwork(Artwork artwork) {
+        this.artwork = artwork;
+    }
+
+    public int getAlbumYear() {
+        return albumYear;
+    }
+
+    public void setAlbumYear(int albumYear) {
+        this.albumYear = albumYear;
+    }
+
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
     }
 
     public File getFile() {

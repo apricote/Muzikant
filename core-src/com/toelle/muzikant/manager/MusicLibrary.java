@@ -18,7 +18,7 @@ public class MusicLibrary {
 
     public MusicLibrary(IOHandler ioHandler) throws IOException {
         this.ioHandler = ioHandler;
-        this.musiclibrary = ioHandler.get();
+        this.musiclibrary = ioHandler.getAll();
     }
 
     public List<Song> search(Predicate<? super Song> predicate) {
