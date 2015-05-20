@@ -30,7 +30,7 @@
     </target>
 
     <target name="desktop.run" depends="desktop.compile">
-        <java classname="com.toelle.muzikant.gui.Main">
+        <java classname="com.toelle.muzikant.gui.MainWindow">
             <classpath>
                 <pathelement path="${out.desktop.dir}"/>
                 <pathelement path="${out.core.dir}"/>
