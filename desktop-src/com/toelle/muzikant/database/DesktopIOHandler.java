@@ -1,8 +1,6 @@
 package com.toelle.muzikant.database;
 
 import com.toelle.muzikant.exception.PreferenceNotSetException;
-import com.toelle.muzikant.model.Album;
-import com.toelle.muzikant.model.Artist;
 import com.toelle.muzikant.model.Song;
 
 import java.io.File;
@@ -10,13 +8,10 @@ import java.io.IOException;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
 import java.util.prefs.Preferences;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class DesktopIOHandler implements IOHandler {
 
@@ -34,44 +29,31 @@ public class DesktopIOHandler implements IOHandler {
     }
 
     @Override
-    public List<Artist> get() throws IOException {
+    public List<Song> getAll() throws IOException {
         Path musicRoot = libraryRoot.resolve("./Music/");
         File musicFile = musicRoot.toFile();
 
-        List<Artist> artistList = getTreeElement(musicFile, this::getArtist);
-
-        return artistList;
-    }
-
-    private Song getSong(File songFile) {
-
-    }
-
-    private Album getAlbum(File albumFile) {
-        List<Song> songList = getTreeElement(albumFile, this::getSong);
-
-        String albumName = albumFile.getName();
-
-
-
-        //return new Album(albumName, albumArtwork, year, songList);
-    }
-
-    private Artist getArtist(File artistFile) {
-        List<Album> albumList = getTreeElement(artistFile, this::getAlbum);
-
-        String artistName = artistFile.getName();
-        return new Artist(artistName, albumList);
-    }
-
-
-    private <T> List<T> getTreeElement(File file, Function<? super File, ? extends T> mapper) {
-        return Arrays.stream(file.listFiles())
-                .filter(File::isDirectory)
-                .map(mapper)
+        List<Song> songList = Arrays.stream(musicFile.listFiles())
+                .filter(File::isDirectory) // Stream of all Artists
+                .map(File::listFiles)
+                .flatMap(Arrays::stream)
+                .filter(File::isDirectory) //Stream of all Albums
+                .map(File::listFiles)
+                .flatMap(Arrays::stream) // Stream of all Song Files
+                .map(songFile -> {
+                    String songString = songFile.getName();
+                    Song newSong = new Song(songFile, songString);
+                    Path songPath = songFile.toPath();
+                    String albumString = songPath.getName(songPath.getNameCount() - 1).getFileName().toString();
+                    newSong.setAlbumName(albumString);
+                    String artistString = songPath.getName(songPath.getNameCount() - 2).getFileName().toString();
+                    newSong.setArtistName(artistString);
+                    return newSong;
+                })
                 .collect(Collectors.toList());
-    }
 
+        return songList;
+    }
 
     public DesktopIOHandler() throws PreferenceNotSetException, InvalidPathException {
         prefs = Preferences.userRoot().node("com.toelle.muzikant");
