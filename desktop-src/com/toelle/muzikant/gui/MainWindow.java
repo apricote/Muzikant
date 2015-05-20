@@ -1,12 +1,16 @@
 package com.toelle.muzikant.gui;
 
+import com.toelle.muzikant.database.DesktopIOHandler;
 import com.toelle.muzikant.database.IOHandler;
+import com.toelle.muzikant.exception.PreferenceNotSetException;
 import com.toelle.muzikant.manager.MusicLibrary;
 import com.toelle.muzikant.playback.Deejay;
 import com.toelle.muzikant.playback.DesktopPlattenspieler;
 import com.toelle.muzikant.playback.Plattenspieler;
 import javafx.application.Application;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainWindow extends Application {
 
@@ -22,16 +26,27 @@ public class MainWindow extends Application {
 
     }
 
-   /*private void initializeCore() {
+   private void initializeCore() {
         deejay = new Deejay(getPlattenspieler());
-        library = new MusicLibrary(getIOHandler());
-    }
+       try {
+           library = new MusicLibrary(getIOHandler());
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+   }
 
     private IOHandler getIOHandler() {
-        return new DesktopIOHandler();
+        IOHandler result = null;
+        try {
+            result = new DesktopIOHandler();
+        } catch (PreferenceNotSetException e) {
+            e.printStackTrace();
+        } finally {
+            return result;
+        }
     }
 
     private Plattenspieler getPlattenspieler() {
         return new DesktopPlattenspieler();
-    }*/
+    }
 }
