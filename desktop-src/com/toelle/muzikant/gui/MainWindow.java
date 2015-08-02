@@ -26,6 +26,8 @@ public class MainWindow extends Application {
     private final String[] CFG_LOCATION = {System.getProperty("user.home"), ".muzikant"};
     private final String[][] STANDARD_CFG = {{"music.location", Paths.get(System.getProperty("user.home"), "Music").toString()}};
 
+    private Properties props;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -64,7 +66,7 @@ public class MainWindow extends Application {
         Path configPath = Paths.get(CFG_LOCATION[0], Arrays.copyOfRange(CFG_LOCATION, 1, CFG_LOCATION.length));
         // Ugly because of the one required parameter and varargs after that
 
-        Properties props = new Properties();
+        props = new Properties();
 
         try {
             props.load(new FileInputStream(configPath.toFile()));
