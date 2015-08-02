@@ -48,14 +48,7 @@ public class MainWindow extends Application {
    }
 
     private IOHandler getIOHandler() {
-        IOHandler result = null;
-        try {
-            result = new DesktopIOHandler();
-        } catch (PreferenceNotSetException e) {
-            e.printStackTrace();
-        } finally {
-            return result;
-        }
+        return new DesktopIOHandler(Paths.get(props.getProperty("music.location")));
     }
 
     private Plattenspieler getPlattenspieler() {

@@ -55,18 +55,7 @@ public class DesktopIOHandler implements IOHandler {
         return songList;
     }
 
-    public DesktopIOHandler() throws PreferenceNotSetException, InvalidPathException {
-        prefs = Preferences.userRoot().node("com.toelle.muzikant");
-
-        String libraryRootValueName = "libraryRootPath";
-        String savedLibraryRootPath = prefs.get(libraryRootValueName, null);
-
-        if(savedLibraryRootPath == null) {
-            throw new PreferenceNotSetException();
-        }
-
-        libraryRoot = Paths.get(savedLibraryRootPath);
-
-
+    public DesktopIOHandler(Path libraryRoot) {
+        this.libraryRoot = libraryRoot;
     }
 }
