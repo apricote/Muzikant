@@ -35,10 +35,11 @@ public class MainWindow extends Application {
     @Override
     public void start(Stage primaryStage) {
         getProperties();
+        initCore();
 
     }
 
-   private void initializeCore() {
+   private void initCore() {
         deejay = new Deejay(getPlattenspieler());
        try {
            library = new MusicLibrary(getIOHandler());
