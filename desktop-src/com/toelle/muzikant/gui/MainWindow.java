@@ -2,7 +2,6 @@ package com.toelle.muzikant.gui;
 
 import com.toelle.muzikant.database.DesktopIOHandler;
 import com.toelle.muzikant.database.IOHandler;
-import com.toelle.muzikant.exception.PreferenceNotSetException;
 import com.toelle.muzikant.manager.MusicLibrary;
 import com.toelle.muzikant.playback.Deejay;
 import com.toelle.muzikant.playback.DesktopPlattenspieler;
