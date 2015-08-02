@@ -37,4 +37,6 @@
             </classpath>
         </java>
     </target>
+
+    <target name="all.bin" depends="core.bin,desktop.bin" />
 </project>
