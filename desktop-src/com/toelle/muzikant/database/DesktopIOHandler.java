@@ -29,9 +29,8 @@ public class DesktopIOHandler implements IOHandler {
     }
 
     @Override
-    public List<Song> getAll() throws IOException {
-        Path musicRoot = libraryRoot.resolve("./Music/");
-        File musicFile = musicRoot.toFile();
+    public List<Song> getAll() throws IOException {;
+        File musicFile = libraryRoot.toFile();
 
         List<Song> songList = Arrays.stream(musicFile.listFiles())
                 .filter(File::isDirectory) // Stream of all Artists
