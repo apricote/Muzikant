@@ -43,6 +43,7 @@ public class MainWindow extends Application {
        try {
            library = new MusicLibrary(getIOHandler());
        } catch (IOException e) {
+           //TODO log + errrorhandling
            e.printStackTrace();
        }
    }
