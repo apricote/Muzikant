@@ -77,4 +77,18 @@ public class MusicLibrary {
                             .collect(Collectors.toCollection(ArrayList::new));
     }
 
+    /**
+     * Does a full text search on all String Tags of a Song.
+     *
+     * @param query what should be searched for
+     * @return a list of Songs whose tags contain the query string
+     */
+    public List<Song> searchAllTags(String query) {
+        return search(s ->
+            s.getTitle().contains(query)
+                || s.getArtistName().contains(query)
+                || s.getAlbumName().contains(query)
+        );
+    }
+
 }
